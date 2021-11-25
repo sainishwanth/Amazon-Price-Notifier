@@ -1,8 +1,8 @@
 <h1>Python Web-Scrapper for <a href="https://www.amazon.in/">Amazon.in</a></h1>
 
 <h2>Uses</h2>
-	Scrapes the website for the price of a particular items
-	You can set a certain price mark to get an email notification when the price drops below that mark
+	<p>Scrapes the website for the price of a particular items</p>
+	<p>You can set a certain price mark to get an email notification when the price drops below that mark</p>
 <h2>Requirements</h2>
 	<ol>Python3</ol>
 	<ol>BeautifulSoup Library</ol>
