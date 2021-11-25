@@ -1,15 +1,11 @@
-#Python Web Scrapper For the Amazon.in
+<h1>Python Web-Scrapper for Amazon.in</h1>
 
-##Installation -
--Requirements:
-	-Python 3
-	-BeautifulSoup Library (pip3 install bs4)
-	-Requests Library(pip3 install requests)
-	-<a href= "https://support.google.com/accounts/answer/185833?hl=en">Google App Password</a>
-	
--Run the WebScrapper With Python
-		(Python3 WebScrapper.py) 
+<h2>Requirements</h2>
+		<ol>Python3</ol>
+		<ol>BeautifulSoup Library</ol>
+		<ol>Requests Library</ol>
+		<ol><a href="https://support.google.com/accounts/answer/185833?hl=en"><b>Google App Password</b></a></ol>
 
-	
-	
-##*Requires Google App Password in the Password Field!*
+
+<h3><b>NEED TO CREATE A GOOGLE APP PASSWORD TO USE IT</b></h3>
+
