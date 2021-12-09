@@ -1,11 +1,9 @@
 import smtplib
 import time
-import os
 
 import requests
 from bs4 import BeautifulSoup
-#--------------------------------------------------------------------------------------------------------------------------------------------------
-header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
+
 
 def Price():
     try:
@@ -26,12 +24,6 @@ def Price():
         return price[1:].strip()
     except AttributeError:
         pass
-    try:
-        price = soup.find(id = "priceblock_saleprice").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
 
 def Send_Mail(email,password,remail):
     server = smtplib.SMTP('smtp.gmail.com',587)
@@ -47,6 +39,8 @@ def Send_Mail(email,password,remail):
 
 
 while True:
+    header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
+    
     try:
         url = input("Enter the URL: ")
         page = requests.get(url, headers = header)

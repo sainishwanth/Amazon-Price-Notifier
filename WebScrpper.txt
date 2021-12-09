@@ -4,6 +4,7 @@ import os
 
 import requests
 from bs4 import BeautifulSoup
+from keep_alive import keep_alive
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
 
@@ -22,12 +23,6 @@ def Price():
         pass
     try: 
         price = soup.find(id = "buyNewSection").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
-    try:
-        price = soup.find(id = "priceblock_saleprice").get_text()
         print(f"Price - {price}")
         return price[1:].strip()
     except AttributeError:
@@ -87,6 +82,7 @@ while True:
 
 
 if __name__ == '__main__':
-    pass
+    keep_alive()
+
 
 
