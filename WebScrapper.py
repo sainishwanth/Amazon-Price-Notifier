@@ -9,30 +9,34 @@ from playsound import playsound
 header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
 
 def Price():
-    try:
-        price = soup.find(id = "priceblock_ourprice").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
-    try:
-        price = soup.find(id = "priceblock_dealprice").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
-    try: 
-        price = soup.find(id = "buyNewSection").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
-    try:
-        price = soup.find(id = "priceblock_saleprice").get_text()
-        print(f"Price - {price}")
-        return price[1:].strip()
-    except AttributeError:
-        pass
+    while True:
+        try:
+            price = soup.find(id = "priceblock_ourprice").get_text()
+            print(f"Price - {price}")
+            return price[1:].strip()
+        except AttributeError:
+            pass
+        try:
+            price = soup.find(id = "priceblock_dealprice").get_text()
+            print(f"Price - {price}")
+            return price[1:].strip()
+        except AttributeError:
+            pass
+        try: 
+            price = soup.find(id = "buyNewSection").get_text()
+            print(f"Price - {price}")
+            return price[1:].strip()
+        except AttributeError:
+            pass
+        try:
+            price = soup.find(id = "priceblock_saleprice").get_text()
+            print(f"Price - {price}")
+            return price[1:].strip()
+        except AttributeError:
+            pass
+        finally:
+            print("Retrieving the Price")
+            continue
 
 def Send_Mail(email,password,remail):
     server = smtplib.SMTP('smtp.gmail.com',587)
@@ -47,17 +51,14 @@ def Send_Mail(email,password,remail):
     server.sendmail(email,remail,body)
 
 
+url = input("Enter Your URL: ")
 while True:
     try:
-        url = input("Enter the URL: ")
         page = requests.get(url, headers = header)
         soup = BeautifulSoup(page.content, 'html.parser')
         title = soup.find(id = "productTitle").get_text().strip()
     except:
-        url = input("Enter Your URL Again: ")
-        page = requests.get(url, headers = header)
-        soup = BeautifulSoup(page.content, 'html.parser')
-        title = soup.find(id = "productTitle").get_text().strip()
+        continue
     
     print("\n"+title+"\n")
     check = input("Is the this the Item You're Looking for? (Y/N)- ")
