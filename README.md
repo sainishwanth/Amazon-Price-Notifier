@@ -7,6 +7,7 @@
 	<ol>Python3</ol>
 	<ol>BeautifulSoup Library</ol>
 	<ol>Requests Library</ol>
+	<ol>playsound Library</ol>
 	<ol><a href="https://support.google.com/accounts/answer/185833?hl=en"><b>Google App Password</b></a></ol>
 
 
