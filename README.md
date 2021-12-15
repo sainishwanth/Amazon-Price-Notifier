@@ -3,10 +3,8 @@
 <h2>Uses</h2>
 	<p>Scrapes the website for the price of a particular items</p>
 	<span>
-		<li>
-			<ol>Send an Email when the price of an items drops</ol>
-			<ol>Play a sound alert when the price of an item drops</ol>
-		</li>
+		<ol>Send an Email when the price of an items drops</ol>
+		<ol>Play a sound alert when the price of an item drops</ol>
 	</span>
 <h2>Requirements</h2>
 	<ol>Python3</ol>
