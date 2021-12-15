@@ -76,21 +76,36 @@ actual_price = float(item_price)
 price_threshold = float(input("Enter Your Min Price: "))
 print(f"Price Threshold - {price_threshold}")
 run_time = int(input("How Often Would You Like to Check?(seconds) - "))
-email = input("Enter Your Mail ID: ")
-password = input("Enter your google app password: ")
-remail = input("Enter the receivers Email: ")
-music_path = input("Enter a Path to Your Music: ")
 while True:
-    if price_threshold >= actual_price:
-        Send_Mail(email,password,remail)
-        print("EMAIL SENT")
-        playsound(music_path)
+    check = int(input("1.Email\n2.Music Alert: "))
+    if check == 1:
+        email = input("Enter Your Mail ID: ")
+        password = input("Enter your google app password: ")
+        remail = input("Enter the receivers Email: ")
+        break
+    elif check == 2:
+        music_path = input("Enter a Path to Your Music: ")
         break
     else:
-        print("Running...\n")
-        time.sleep(run_time)
-
-
+        print("Wrong Input!\n")
+if(check == 1):
+    while True:
+        if price_threshold >= actual_price:
+            Send_Mail(email,password,remail)
+            print("EMAIL SENT")
+            playsound(music_path)
+            break
+        else:
+            print("Running...\n")
+            time.sleep(run_time)
+else:
+    while True:
+        if price_threshold >= actual_price:
+            playsound(music_path)
+            break
+        else:
+            print("Running...\n")
+            time.sleep(run_time)
 
 if __name__ == '__main__':
     pass
