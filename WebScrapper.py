@@ -61,7 +61,7 @@ while True:
         title = soup.find(id = "productTitle").get_text().strip() #Parsing for the id "productTitle" which contains the Title/Name of the product
     except:
         continue
-    
+
     print("\n"+title+"\n")
     check = input("Is the this the Item You're Looking for? (Y/N)- ")
     if check.lower() == 'y':
@@ -101,11 +101,12 @@ if(check == 1):
 else:
     while True:
         if price_threshold >= actual_price:
-            playsound(music_path)
+            print("The Price has Dropped!\n")
             break
         else:
             print("Running...\n")
             time.sleep(run_time)
+    playsound(music_path)
 
 if __name__ == '__main__':
     pass
