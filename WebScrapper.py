@@ -90,6 +90,9 @@ while True:
         print("Wrong Input!\n")
 if(check == 1):
     while True:
+        item_price = Price()
+        item_price = item_price.replace(',','')
+        actual_price = float(item_price)
         if price_threshold >= actual_price:
             Send_Mail(email,password,remail)
             print("EMAIL SENT")
@@ -100,6 +103,9 @@ if(check == 1):
             time.sleep(run_time)
 else:
     while True:
+        item_price = Price()
+        item_price = item_price.replace(',','')
+        actual_price = float(item_price)
         if price_threshold >= actual_price:
             print("The Price has Dropped!\n")
             break
