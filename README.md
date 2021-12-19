@@ -1,5 +1,6 @@
 <h1>Python Price Notifier for <a href="https://www.amazon.in/">Amazon.in</a></h1>
 <h3><i>THIS ONLY WORKS ON THE INDIAN AMAZON</i></h3>
+<h3><b>NEED TO CREATE A GOOGLE APP PASSWORD TO USE THE EMAIL FEATURES</b></h3>
 <h2>Uses</h2>
 	<p>Scrapes the website for the price of a particular items</p>
 	<span>
@@ -17,5 +18,4 @@
 	<h3><b>Run the followin command in your terminal:</b></h3>
 	<p>git clone https://github.com/sainishwanth/Amazon.in-Web-Scrapper.git && pip3 install bs4 requests playsound</p>
 
-<h3><b>NEED TO CREATE A GOOGLE APP PASSWORD TO USE THE EMAIL FEATURES</b></h3>
 
