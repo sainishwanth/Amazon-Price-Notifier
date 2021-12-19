@@ -14,6 +14,7 @@
 	<ol><a href="https://support.google.com/accounts/answer/185833?hl=en"><b>Google App Password</b></a></ol>
 
 <h2>Installation</h2>
+	<h3><b>Run the followin command in your terminal:</b></h3>
 	<p>git clone https://github.com/sainishwanth/Amazon.in-Web-Scrapper.git && pip3 install bs4 requests playsound</p>
 
 <h3><b>NEED TO CREATE A GOOGLE APP PASSWORD TO USE THE EMAIL FEATURES</b></h3>
