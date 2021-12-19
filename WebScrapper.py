@@ -96,7 +96,6 @@ if(check == 1):
         if price_threshold >= actual_price:
             Send_Mail(email,password,remail)
             print("EMAIL SENT")
-            playsound(music_path)
             break
         else:
             print("Running...\n")
@@ -107,6 +106,7 @@ else:
         item_price = item_price.replace(',','')
         actual_price = float(item_price)
         if price_threshold >= actual_price:
+            playsound(music_path)
             print("The Price has Dropped!\n")
             break
         else:
