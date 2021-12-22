@@ -88,7 +88,7 @@ while True:
         break
     else:
         print("Wrong Input!\n")
-if(check == 1):
+if check == 1:
     while True:
         item_price = Price()
         item_price = item_price.replace(',','')
