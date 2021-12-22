@@ -16,6 +16,6 @@
 
 <h2>Installation</h2>
 	<h3><b>Run the following command in your terminal:</b></h3>
-	<p>```git clone https://github.com/sainishwanth/Amazon.in-Web-Scrapper.git && pip3 install bs4 requests playsound```</p>
+	```git clone https://github.com/sainishwanth/Amazon.in-Web-Scrapper.git && pip3 install bs4 requests playsound```
 
 
