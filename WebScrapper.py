@@ -10,42 +10,50 @@ from playsound import playsound
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'} #User-Agent
 
-def Price(): #Function to Retrieve the price
+def Price():
     while True:
         page = requests.get(url, headers = header)
         soup = BeautifulSoup(page.content, 'html.parser')
         try:
+            price = soup.find("span", id = "priceblock_ourprice").get_text()
+            return price_slice(price)
+        except AttributeError:
+            pass
+        try:
             price = soup.find("span", class_ = "a-offscreen").get_text()
-            print(f"Price - {price}")
-            return price[1:].strip()
+            return price_slice(price)
+        except AttributeError:
+            pass
+        try:
+            price = soup.find("span", class_ = "a-size-medium a-color-price priceBlockBuyingPriceString").get_text()
+            return price_slice(price)
         except AttributeError:
             pass
         try:
             price = soup.find(id = "priceblock_ourprice").get_text()
-            print(f"Price - {price}")
-            return price[1:].strip()
+            return price_slice(price)
         except AttributeError:
             pass
         try:
             price = soup.find(id = "priceblock_dealprice").get_text()
-            print(f"Price - {price}")
-            return price[1:].strip()
+            return price_slice(price)
         except AttributeError:
             pass
         try:
             price = soup.find(id = "buyNewSection").get_text()
-            print(f"Price - {price}")
-            return price[1:].strip()
+            return price_slice(price)
         except AttributeError:
             pass
         try:
             price = soup.find(id = "priceblock_saleprice").get_text()
-            print(f"Price - {price}")
-            return price[1:].strip()
+            return price_slice(price)
         except AttributeError:
             pass
-        finally:
-            continue
+
+def price_slice(price):
+    print(f"Price - {price}")
+    return price[1:].strip()
+
 
 def Send_Mail(email,password,remail): #Function for sending a mail to the user
     server = smtplib.SMTP('smtp.gmail.com',587)
