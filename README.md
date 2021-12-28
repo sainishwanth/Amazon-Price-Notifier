@@ -1,4 +1,4 @@
-# Python Price Notifier for Amazon.in
+# Python Price Notifier for Amazon
 ##  <i>THIS ONLY WORKS ON THE INDIAN AMAZON</i>
 ##  <b>NEED TO CREATE A GOOGLE APP PASSWORD TO USE THE EMAIL FEATURES</b>
 <h3>Uses</h3>
