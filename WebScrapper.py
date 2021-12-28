@@ -1,18 +1,25 @@
-#Libraries
+#In-Built Libs
 import smtplib
 import time
 import os
 
+#Third Party Libs
 import requests
 from bs4 import BeautifulSoup
 from playsound import playsound
 #--------------------------------------------------------------------------------------------------------------------------------------------------
-header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
+header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'} #User-Agent
 
-def Price():                                                                
+def Price(): #Function to Retrieve the price
     while True:
         page = requests.get(url, headers = header)
         soup = BeautifulSoup(page.content, 'html.parser')
+        try:
+            price = soup.find("span", class_ = "a-offscreen").get_text()
+            print(f"Price - {price}")
+            return price[1:].strip()
+        except AttributeError:
+            pass
         try:
             price = soup.find(id = "priceblock_ourprice").get_text()
             print(f"Price - {price}")
@@ -25,7 +32,7 @@ def Price():
             return price[1:].strip()
         except AttributeError:
             pass
-        try: 
+        try:
             price = soup.find(id = "buyNewSection").get_text()
             print(f"Price - {price}")
             return price[1:].strip()
@@ -40,16 +47,16 @@ def Price():
         finally:
             continue
 
-def Send_Mail(email,password,remail): #Function for sending a mail to the user 
+def Send_Mail(email,password,remail): #Function for sending a mail to the user
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
     server.ehlo()
-    
+
     server.login(email,password)
-    
+
     body = f"Price Fell Down\n\nCheck -{url}"
-    
+
     server.sendmail(email,remail,body)
 
 
