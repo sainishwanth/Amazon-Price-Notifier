@@ -68,7 +68,7 @@ def Send_Mail(email,password,remail): #Function for sending a mail to the user
     server.sendmail(email,remail,body)
 
 
-url = input("Enter Your URL: ")
+url = input("Enter Your URL NIGGA: ")
 while True:
     try:
         page = requests.get(url, headers = header)
